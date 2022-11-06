@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+}
