@@ -5,20 +5,25 @@ const buttonSquares = document.querySelector('.button-squares');
 let currentFeature = 'pen';
 
 renderGrid();
+attachListeners();
 
 window.addEventListener('keydown', (e) => {
     switch (e.code) {
         case 'KeyE':
             currentFeature = 'eraser';
+            attachListeners();
             break;
         case 'KeyR':
             currentFeature = 'random';
+            attachListeners();
             break;
         case 'KeyT':
             currentFeature = 'transparency';
+            attachListeners();
             break;
         case 'KeyP':
             currentFeature = 'pen';
+            attachListeners();
             break;
     }
 });
@@ -43,7 +48,6 @@ function renderGrid(squaresPerSide = 24) {
             container.appendChild(gridElement);
         }
     }
-    attachListeners();
 }
 
 function attachListeners() {
