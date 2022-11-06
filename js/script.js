@@ -2,6 +2,11 @@ const container = document.querySelector('.container');
 const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
+let penOn = true;
+let eraseOn = false;
+let transparencyOn = false;
+let randomOn = false;
+
 renderGrid();
 
 buttonSquares.addEventListener('click', () => {
