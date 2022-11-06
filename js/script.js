@@ -57,42 +57,27 @@ function attachListeners() {
     switch (currentFeature) {
         case 'pen':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = 'black';
-                });
+                element.addEventListener('mouseover', featurePen);
             });
             break;
         case 'eraser':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = 'white';
-                });
+                element.addEventListener('mouseover', featureEraser);
             });
             break;
         case 'transparency':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
-                    if (transparency < 1) {
-                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
-                        transparency += 0.1;
-                    } else {
-                        transparency = 0.1;
-                    }
-                });
+                element.addEventListener('mouseover', featureTransparency);
             });
             break;
         case 'random':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = randomRgb();
-                });
+                element.addEventListener('mouseover', featureRandom);
             });
             break;    
         default: 
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = 'black';
-                });
+                element.addEventListener('mouseover', featurePen);
             });
             break;
     }
@@ -110,3 +95,25 @@ function randomRgb() {
     }
     return rgbString;
 }
+
+function featurePen(e) {
+    e.target.style.backgroundColor = 'black';
+}
+
+function featureEraser (e) {
+    e.target.style.backgroundColor = 'white';
+}
+
+function featureRandom(e) {
+    e.target.style.backgroundColor = randomRgb();
+}
+
+function featureTransparency(e) {
+    if (transparency < 1) {
+        e.target.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+        transparency += 0.1;
+    } else {
+        transparency = 0.1;
+    }
+}
+
