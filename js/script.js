@@ -3,7 +3,7 @@ const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
 let currentFeature = 'pen';
-let transparency = 0.1;
+let transparency = 0;
 
 renderGrid();
 attachListeners();
@@ -88,6 +88,13 @@ function attachListeners() {
                 });
             });
             break;    
+        default: 
+            gridElements.forEach( (element) => {
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = 'black';
+                });
+            });
+            break;
     }
 }
 
