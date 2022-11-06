@@ -9,6 +9,35 @@ let randomOn = false;
 
 renderGrid();
 
+window.addEventListener('keydown', (e) => {
+    switch (e.code) {
+        case 'KeyE':
+            penOn = false;
+            eraseOn = true;
+            transparencyOn = false;
+            randomOn = false;
+            break;
+        case 'KeyR':
+            penOn = false;
+            eraseOn = false;
+            transparencyOn = false;
+            randomOn = true;
+            break;
+        case 'KeyT':
+            penOn = false;
+            eraseOn = false;
+            transparencyOn = true;
+            randomOn = false;
+            break;
+        case 'KeyP':
+            penOn = true;
+            eraseOn = false;
+            transparencyOn = false;
+            randomOn = false;
+            break;
+    }
+});
+
 buttonSquares.addEventListener('click', () => {
     let squaresPerSide = +prompt('Set number of squares per side. (1-100)');
     while (squaresPerSide > 100 || squaresPerSide <= 0) {
@@ -16,6 +45,8 @@ buttonSquares.addEventListener('click', () => {
     }
     renderGrid(squaresPerSide);
 });
+
+
 
 function renderGrid(squaresPerSide = 24) {
     container.textContent = '';
