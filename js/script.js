@@ -5,7 +5,7 @@ const buttonSquares = document.querySelector('button-squares');
 renderGrid();
 
 buttonSquares.addEventListener('click', () => {
-    const numberPerSide = +prompt('Set number of squares per side. (1-100)');
+    const squaresPerSide = +prompt('Set number of squares per side. (1-100)');
 });
 
 function renderGrid() {
