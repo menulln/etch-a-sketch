@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const containerSize = 800;
+const containerSize = 600;
 const buttonSquares = document.querySelector('button-squares');
 
 renderGrid();
