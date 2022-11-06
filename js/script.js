@@ -3,6 +3,7 @@ const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
 let currentFeature = 'pen';
+let lastFeature = '';
 let transparency = 0;
 
 renderGrid();
@@ -83,6 +84,10 @@ function attachListeners() {
     }
 }
 
+function detachListeners() {
+
+}
+
 function randomRgb() {
     let rgbString = 'rgb(';
     for (let i = 0; i < 3; i++) {
@@ -98,14 +103,17 @@ function randomRgb() {
 
 function featurePen(e) {
     e.target.style.backgroundColor = 'black';
+    lastFeature = 'pen';
 }
 
 function featureEraser (e) {
     e.target.style.backgroundColor = 'white';
+    lastFeature = 'eraser';
 }
 
 function featureRandom(e) {
     e.target.style.backgroundColor = randomRgb();
+    lastFeature = 'random';
 }
 
 function featureTransparency(e) {
@@ -115,5 +123,6 @@ function featureTransparency(e) {
     } else {
         transparency = 0.1;
     }
+    lastFeature = 'transparency';
 }
 
