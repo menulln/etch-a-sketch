@@ -46,8 +46,6 @@ buttonSquares.addEventListener('click', () => {
     renderGrid(squaresPerSide);
 });
 
-
-
 function renderGrid(squaresPerSide = 24) {
     container.textContent = '';
     for (let i = 0; i < squaresPerSide; i++) { 
@@ -60,9 +58,12 @@ function renderGrid(squaresPerSide = 24) {
             container.appendChild(gridElement);
         }
     }
+    attachListeners();
+}
 
+function attachListeners() {
     const gridElements = document.querySelectorAll('.grid');
-    
+
     let transparency = 0.1;
 
     gridElements.forEach(element => {
