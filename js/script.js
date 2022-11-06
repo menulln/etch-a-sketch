@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const containerSize = 800;
 
 for (let i = 0; i < 1000; i++) {
     const gridElement = document.createElement('div');
