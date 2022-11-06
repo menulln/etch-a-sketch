@@ -3,6 +3,7 @@ const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
 let currentFeature = 'pen';
+let transparency = 0.1;
 
 renderGrid();
 attachListeners();
@@ -53,18 +54,41 @@ function renderGrid(squaresPerSide = 24) {
 function attachListeners() {
     const gridElements = document.querySelectorAll('.grid');
 
-    let transparency = 0.1;
-
-    gridElements.forEach(element => {
-        element.addEventListener('mouseover', () => {
-            if (transparency < 1) {
-                element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
-                transparency += 0.1;
-            } else {
-                transparency = 0.1;
-            }
-        });
-    });
+    switch (currentFeature) {
+        case 'pen':
+            gridElements.forEach( (element) => {
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = 'black';
+                });
+            });
+            break;
+        case 'eraser':
+            gridElements.forEach( (element) => {
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = 'white';
+                });
+            });
+            break;
+        case 'transparency':
+            gridElements.forEach( (element) => {
+                element.addEventListener('mouseover', () => {
+                    if (transparency < 1) {
+                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                        transparency += 0.1;
+                    } else {
+                        transparency = 0.1;
+                    }
+                });
+            });
+            break;
+        case 'random':
+            gridElements.forEach( (element) => {
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = randomRgb();
+                });
+            });
+            break;    
+    }
 }
 
 function randomRgb() {
@@ -77,6 +101,5 @@ function randomRgb() {
             rgbString += `${rgbValue})`;
         }
     }
-    console.log(rgbString)
     return rgbString;
 }
