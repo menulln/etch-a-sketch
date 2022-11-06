@@ -13,6 +13,7 @@ buttonSquares.addEventListener('click', () => {
 });
 
 function renderGrid(squaresPerSide = 24) {
+    container.textContent = '';
     for (let i = 0; i < squaresPerSide; i++) { 
         for (let j = 0; j < squaresPerSide; j++) {
             const gridElement = document.createElement('div');
