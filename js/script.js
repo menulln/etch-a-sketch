@@ -29,7 +29,7 @@ function renderGrid(squaresPerSide = 24) {
     
     gridElements.forEach(element => {
         element.addEventListener('mouseover', () => {
-            element.style.backgroundColor = 'black';
+            element.style.backgroundColor = randomRgb();
         });
     });
 }
