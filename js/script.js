@@ -1,7 +1,7 @@
 const container = document.querySelector('.container');
 const containerSize = 800;
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 1786; i++) {
     const gridElement = document.createElement('div');
     gridElement.style.cssText = (` width: 15px; 
                                    height: 15px; 
