@@ -34,3 +34,16 @@ function renderGrid(squaresPerSide = 24) {
     });
 }
 
+function randomRgb() {
+    let rgbString = 'rgb(';
+    for (let i = 0; i < 3; i++) {
+        const rgbValue = Math.floor(Math.random() * 254);
+        if (i < 2) {
+            rgbString += `${rgbValue}, `;
+        } else {
+            rgbString += `${rgbValue})`;
+        }
+    }
+    console.log(rgbString)
+    return rgbString;
+}
