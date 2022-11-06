@@ -9,3 +9,11 @@ for (let i = 0; i < 1000; i++) {
     gridElement.classList.toggle('grid');
     container.appendChild(gridElement);
 }
+
+const gridElements = document.querySelectorAll('.grid');
+
+gridElements.forEach(element => {
+    element.addEventListener('mouseover', () => {
+        element.style.backgroundColor = 'black';
+    });
+});
