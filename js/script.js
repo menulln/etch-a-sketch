@@ -1,11 +1,15 @@
 const container = document.querySelector('.container');
 const containerSize = 600;
-const buttonSquares = document.querySelector('button-squares');
+const buttonSquares = document.querySelector('.button-squares');
 
 renderGrid();
 
 buttonSquares.addEventListener('click', () => {
-    const squaresPerSide = +prompt('Set number of squares per side. (1-100)');
+    let squaresPerSide = +prompt('Set number of squares per side. (1-100)');
+    while (squaresPerSide > 100 || squaresPerSide <= 0) {
+        squaresPerSide = +prompt('Set number of squares per side. (1-100)');
+    }
+    renderGrid(squaresPerSide);
 });
 
 function renderGrid(squaresPerSide = 24) {
