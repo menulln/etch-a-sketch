@@ -2,38 +2,23 @@ const container = document.querySelector('.container');
 const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
-let penOn = true;
-let eraseOn = false;
-let transparencyOn = false;
-let randomOn = false;
+let currentFeature = 'pen';
 
 renderGrid();
 
 window.addEventListener('keydown', (e) => {
     switch (e.code) {
         case 'KeyE':
-            penOn = false;
-            eraseOn = true;
-            transparencyOn = false;
-            randomOn = false;
+            currentFeature = 'eraser';
             break;
         case 'KeyR':
-            penOn = false;
-            eraseOn = false;
-            transparencyOn = false;
-            randomOn = true;
+            currentFeature = 'random';
             break;
         case 'KeyT':
-            penOn = false;
-            eraseOn = false;
-            transparencyOn = true;
-            randomOn = false;
+            currentFeature = 'transparency';
             break;
         case 'KeyP':
-            penOn = true;
-            eraseOn = false;
-            transparencyOn = false;
-            randomOn = false;
+            currentFeature = 'pen';
             break;
     }
 });
