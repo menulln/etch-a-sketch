@@ -1,7 +1,12 @@
 const container = document.querySelector('.container');
 const containerSize = 800;
+const buttonSquares = document.querySelector('button-squares');
 
 renderGrid();
+
+buttonSquares.addEventListener('click', () => {
+    const numberPerSide = +prompt('Set number of squares per side. (1-100)');
+});
 
 function renderGrid() {
     for (let i = 0; i < 1786; i++) {
