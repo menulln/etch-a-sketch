@@ -27,9 +27,16 @@ function renderGrid(squaresPerSide = 24) {
 
     const gridElements = document.querySelectorAll('.grid');
     
+    let transparency = 0.1;
+
     gridElements.forEach(element => {
         element.addEventListener('mouseover', () => {
-            element.style.backgroundColor = randomRgb();
+            if (transparency < 1) {
+                element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                transparency += 0.1;
+            } else {
+                transparency = 0.1;
+            }
         });
     });
 }
