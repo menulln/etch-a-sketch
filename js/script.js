@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
+let mouseDown = false;
 let currentFeature = 'pen';
 let transparency = 0;
 
@@ -32,6 +33,9 @@ window.addEventListener('keydown', (e) => {
             break;
     }
 });
+
+document.addEventListener('mousedown', () => mouseDown = true);
+document.addEventListener('mouseup', () => mouseDown = false);
 
 buttonSquares.addEventListener('click', () => {
     let squaresPerSide = +prompt('Set number of squares per side. (1-100)');
