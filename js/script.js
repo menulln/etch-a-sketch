@@ -11,18 +11,22 @@ attachListeners();
 window.addEventListener('keydown', (e) => {
     switch (e.code) {
         case 'KeyE':
+            document.body.innerHTML = document.body.innerHTML;
             currentFeature = 'eraser';
             attachListeners();
             break;
         case 'KeyR':
+            document.body.innerHTML = document.body.innerHTML;
             currentFeature = 'random';
             attachListeners();
             break;
         case 'KeyT':
+            document.body.innerHTML = document.body.innerHTML;
             currentFeature = 'transparency';
             attachListeners();
             break;
         case 'KeyP':
+            document.body.innerHTML = document.body.innerHTML;
             currentFeature = 'pen';
             attachListeners();
             break;
