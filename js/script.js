@@ -43,6 +43,7 @@ buttonSquares.addEventListener('click', () => {
         squaresPerSide = +prompt('Set number of squares per side. (1-100)');
     }
     renderGrid(squaresPerSide);
+    attachListeners();
 });
 
 function renderGrid(squaresPerSide = 24) {
