@@ -3,7 +3,6 @@ const containerSize = 600;
 const buttonSquares = document.querySelector('.button-squares');
 
 let currentFeature = 'pen';
-let lastFeature = '';
 let transparency = 0;
 
 renderGrid();
@@ -91,10 +90,6 @@ function attachListeners() {
             });
             break;    
     }
-}
-
-function detachListeners() {
-
 }
 
 function randomRgb() {
