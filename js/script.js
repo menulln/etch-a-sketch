@@ -65,7 +65,7 @@ function attachListeners() {
     switch (currentFeature) {
         case 'pen':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
+                element.addEventListener('mousemove', () => {
                     if (mouseDown) {
                         element.style.backgroundColor = 'black';
                     }
@@ -74,7 +74,7 @@ function attachListeners() {
             break;
         case 'eraser':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
+                element.addEventListener('mousemove', () => {
                     if (mouseDown) {
                         element.style.backgroundColor = 'white';
                     }
@@ -83,7 +83,7 @@ function attachListeners() {
             break;
         case 'transparency':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {                  
+                element.addEventListener('mousemove', () => {                  
                     if (mouseDown) {
                         if (transparency < 1) {
                             element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
@@ -98,7 +98,7 @@ function attachListeners() {
             break;
         case 'random':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', () => {
+                element.addEventListener('mousemove', () => {
                     if (mouseDown) {
                         element.style.backgroundColor = randomRgb();
                     }
