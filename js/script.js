@@ -66,26 +66,32 @@ function attachListeners() {
         case 'pen':
             gridElements.forEach( (element) => {
                 element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = 'black';
+                    if (mouseDown) {
+                        element.style.backgroundColor = 'black';
+                    }
                 });
             });
             break;
         case 'eraser':
             gridElements.forEach( (element) => {
                 element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = 'white';
+                    if (mouseDown) {
+                        element.style.backgroundColor = 'white';
+                    }
                 });
             });
             break;
         case 'transparency':
             gridElements.forEach( (element) => {
                 element.addEventListener('mouseover', () => {                  
-                    if (transparency < 1) {
-                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
-                        transparency += 0.1;
-                    } else {
-                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
-                        transparency = 0.1;
+                    if (mouseDown) {
+                        if (transparency < 1) {
+                            element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                            transparency += 0.1;
+                        } else {
+                            element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                            transparency = 0.1;
+                        }
                     }
                 });
             });
@@ -93,7 +99,9 @@ function attachListeners() {
         case 'random':
             gridElements.forEach( (element) => {
                 element.addEventListener('mouseover', () => {
-                    element.style.backgroundColor = randomRgb();
+                    if (mouseDown) {
+                        element.style.backgroundColor = randomRgb();
+                    }
                 });
             });
             break;    
