@@ -58,29 +58,38 @@ function attachListeners() {
     switch (currentFeature) {
         case 'pen':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', featurePen);
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = 'black';
+                });
             });
             break;
         case 'eraser':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', featureEraser);
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = 'white';
+                });
             });
             break;
         case 'transparency':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', featureTransparency);
+                element.addEventListener('mouseover', () => {                  
+                    if (transparency < 1) {
+                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                        transparency += 0.1;
+                    } else {
+                        element.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
+                        transparency = 0.1;
+                    }
+                });
             });
             break;
         case 'random':
             gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', featureRandom);
+                element.addEventListener('mouseover', () => {
+                    element.style.backgroundColor = randomRgb();
+                });
             });
             break;    
-        default: 
-            gridElements.forEach( (element) => {
-                element.addEventListener('mouseover', featurePen);
-            });
-            break;
     }
 }
 
@@ -100,29 +109,3 @@ function randomRgb() {
     }
     return rgbString;
 }
-
-function featurePen(e) {
-    e.target.style.backgroundColor = 'black';
-    lastFeature = 'pen';
-}
-
-function featureEraser (e) {
-    e.target.style.backgroundColor = 'white';
-    lastFeature = 'eraser';
-}
-
-function featureRandom(e) {
-    e.target.style.backgroundColor = randomRgb();
-    lastFeature = 'random';
-}
-
-function featureTransparency(e) {
-    if (transparency < 1) {
-        e.target.style.backgroundColor = `rgba(0, 0, 0, ${transparency})`;
-        transparency += 0.1;
-    } else {
-        transparency = 0.1;
-    }
-    lastFeature = 'transparency';
-}
-
