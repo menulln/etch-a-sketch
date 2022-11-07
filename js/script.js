@@ -52,7 +52,9 @@ function renderGrid(squaresPerSide = 24) {
             const gridElement = document.createElement('div');
             gridElement.style.cssText = (` width: ${(containerSize / squaresPerSide) - 2}px; 
                                         height: ${(containerSize / squaresPerSide) - 2}px; 
-                                        border: 1px solid black;`);
+                                        border: 1px solid black;
+                                        user-select: none;`);
+            gridElement.setAttribute('draggable', 'false'); 
             gridElement.classList.toggle('grid');
             container.appendChild(gridElement);
         }
