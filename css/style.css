@@ -17,3 +17,8 @@ body {
 .button-squares {
     margin-top: 24px;
 }
+
+.how-to {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}
